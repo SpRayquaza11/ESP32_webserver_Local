@@ -45,7 +45,7 @@ void setup(){
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send_P(200, "text/html", index_html);
   });
-  
+  //please note your image must alread be present in the local esp32 flash please use SPIFFS to upload the image
   server.on("/resume", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/resume.jpg", "image/jpg");
   });
